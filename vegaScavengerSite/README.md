@@ -18,3 +18,4 @@
 - In order to scale the image correctly I had to allow a varying amount of it's top part flow off screen (not sure if this is the intended way to acomplish this)
 - I wasn't able to figure out how to get the big quote in the article to overflow/ be alligned outside of the article div that it resides in. And had the same problem with the underline of the sidebar
 - I think both of these could've been solved with changes to the layout but I did not leave myself enough time to experiment
+- Also ran into a few issues getting the PT Mono font to be as bold as the design... not sure why but the font weight property was not making it as bold as it should be in the title and too little bold on the Merriweather big quote. 
