@@ -18,7 +18,18 @@ export default BigQuote;
 
 const styles = StyleSheet.create({
     wrapper:{
-        
+        '@media only screen and (min-width:480px) and (max-width: 767px) ': {
+            marginTop:'20px',
+            marginBottom:'10px',
+        },
+        '@media only screen and (min-width: 768px) and (max-width: 991px)': {
+            marginTop:'30px',
+            marginBottom:'20px',
+        },
+        '@media only screen and (min-width: 992px)': {
+            marginTop:'40px',
+            marginBottom:'30px',
+        },
     },
     textt:{
         width:'110%',
@@ -30,6 +41,7 @@ const styles = StyleSheet.create({
         fontSize:'1.8em',
         fontFamily:'Merriweather',
         fontWeight:'normal',
+        margin:'0px'
    
     },
     quoteAttribution:{
@@ -37,5 +49,6 @@ const styles = StyleSheet.create({
         fontSize:'.7em',
         opacity:'0.5',
         fontFamily:'PT Mono',
+       
     }
 });

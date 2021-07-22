@@ -55,12 +55,12 @@ let ArticleHeading = (props) => {
             <div className={css(styles.buttonBox)}>
                 {editMode?
                     <div>
-                        <button onClick={()=>{cancelEditing()}} className={css(styles.cancelBttn)}>Cancel</button>
-                        <button onClick={()=>{saveTitle()}} className={css(styles.saveBttn,errorState?styles.greyedOut:null)}>Save</button>
+                        <button onClick={()=>{cancelEditing()}} className={css(styles.button,styles.cancelBttn)}>Cancel</button>
+                        <button onClick={()=>{saveTitle()}} className={css(styles.button,styles.saveBttn,errorState?styles.greyedOut:null)}>Save</button>
                     </div>
                     :
                     <div>
-                        <button onClick={()=>{setEditMode(true)}}className={css(styles.editBttn)}>
+                        <button onClick={()=>{setEditMode(true)}}className={css(styles.button,styles.editBttn)}>
                             <i style={{paddingRight:'10px'}} class="fas fa-pencil-alt"></i>Edit
                         </button>
                     </div>
@@ -114,52 +114,39 @@ const styles = StyleSheet.create({
         },
     },
     //should condense button styles to BUTTON class, add specific style on top
-    editBttn:{
+    button:{
         fontFamily: 'PT Mono',
-        backgroundColor:'#F8CF1C',
         cursor:'pointer',
         fontWeight:'bold',
         '@media only screen and (min-width:480px) and (max-width: 767px) ': {
-            padding:'5px',
+            paddingLeft:'5px',
+            paddingRight:'5px',
+            paddingTop:'5px',
+            paddingBottom:'5px'
         },
         '@media only screen and (min-width: 768px) and (max-width: 991px)': {
-            padding:'7px',
+            paddingLeft:'7px',
+            paddingRight:'7px',
+            paddingTop:'8px',
+            paddingBottom:'8px'
         },
         '@media only screen and (min-width: 992px)': {
-            padding:'10px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
+            paddingTop:'8px',
+            paddingBottom:'8px'
         }
     },
+    editBttn:{
+        backgroundColor:'#F8CF1C',
+    },
     cancelBttn:{
-        fontFamily: 'PT Mono',
         backgroundColor:'#FF7F5B',
-        fontWeight:'bold',
-        cursor:'pointer',
-        color:'white',
-        '@media only screen and (min-width:480px) and (max-width: 767px) ': {
-            padding:'5px',
-        },
-        '@media only screen and (min-width: 768px) and (max-width: 991px)': {
-            padding:'7px',
-        },
-        '@media only screen and (min-width: 992px)': {
-            padding:'10px',
-        },
+        color:'white'
     },
     saveBttn:{
-        fontFamily: 'PT Mono',
         backgroundColor:'#5FCC9C',
-        cursor:'pointer',
-        color:'white',
-        fontWeight:'bold',
-        '@media only screen and (min-width:480px) and (max-width: 767px) ': {
-            padding:'5px',
-        },
-        '@media only screen and (min-width: 768px) and (max-width: 991px)': {
-            padding:'7px',
-        },
-        '@media only screen and (min-width: 992px)': {
-            padding:'10px',
-        },
+        color:'white'
     },
     buttonBox:{
         display:'flex',
