@@ -1,2 +1,3 @@
 # vegaScavengerSite
-task for milkshake
+- task for milkshake
+- proper README inside!!!
