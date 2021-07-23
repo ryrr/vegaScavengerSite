@@ -7,7 +7,15 @@ let ArticleHeading = (props) => {
     let [textAreaValue,setTextAreaValue] = useState('Guidelines For Inkjet Cartridge Refill')
     let [slug,setSlug] = useState('guidelines-for-inkjet-cartridge-refill')
     let [errorState,setErrorState] = useState(false)
-    
+    useEffect(()=>{
+        let storedTitle =  localStorage.getItem('savedTitle')
+        if(storedTitle){
+            setSavedTitle(storedTitle)
+            setTextAreaValue(storedTitle)
+            setSlug(string_to_slug(storedTitle))
+
+        }
+    },[])
     useEffect(()=>{
         let slugString = string_to_slug(textAreaValue)
         if(slugString.length === 0){
@@ -39,6 +47,7 @@ let ArticleHeading = (props) => {
     let saveTitle = () => {
         if(textAreaValue.length>1){
             setSavedTitle(textAreaValue)
+            localStorage.setItem('savedTitle', textAreaValue);
             setErrorState(false)
             setEditMode(false)
         }
